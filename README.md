@@ -1,6 +1,7 @@
 # Rodrigues26.jl
 
 [![Build Status](https://github.com/ricfrod/Rodrigues26.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/ricfrod/Rodrigues26.jl/actions/workflows/CI.yml?query=branch%3Amaster)
+[![codecov](https://codecov.io/github/ricfrod/Rodrigues26.jl/graph/badge.svg?token=QYRZOA3WGM)](https://codecov.io/github/ricfrod/Rodrigues26.jl)
 [![DOI:10.1007/s43153-025-00628-2](https://img.shields.io/badge/DOI-10.1007%2Fs43153--025--00628--2-blue)](https://doi.org/10.1007/s43153-025-00628-2)
 
 ## Overview
