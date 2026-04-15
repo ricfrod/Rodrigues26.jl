@@ -1,6 +1,5 @@
 module Rodrigues26
 
-export ExperimentalCycles
 export ObjectiveFunction
 export SignalData
 

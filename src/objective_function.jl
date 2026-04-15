@@ -35,8 +35,8 @@ end
 
 
 function (self::ObjectiveFunction)(
-        t::AbstractVector{<:Real},
-        y::AbstractVector{<:Real},
+        t::Vector{Float64},
+        y::Vector{Float64},
     )::Float64
     model_data = SignalData(t, y)
     return self(model_data)
@@ -44,7 +44,7 @@ end
 
 
 function (self::ObjectiveFunction)(
-        θ::AbstractVector{<:Real},
+        θ::Vector{Float64},
         args...;
         kwargs...
     )::Float64
