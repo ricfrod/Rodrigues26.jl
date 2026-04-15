@@ -18,7 +18,7 @@ using Rodrigues26
 
 function limit_cycle_model(θ::Vector{Float64})::SignalData
     t::Vector{Float64} = collect(LinRange(0, 50, 101))
-    y::Vector{Float64} = θ[1] * sin(2π * t / θ[2])
+    y::Vector{Float64} = θ[1] * sin.(t / θ[2])
     return SignalData(t, y)
 end
 ```
@@ -31,7 +31,7 @@ using Rodrigues26
 
 @model t y function limit_cycle_model(θ::Vector{Float64})
     t::Vector{Float64} = collect(LinRange(0, 50, 101))
-    y::Vector{Float64} = θ[1] * sin(2π * t / θ[2])
+    y::Vector{Float64} = θ[1] * sin.(t / θ[2])
 end
 ```
 
@@ -42,14 +42,14 @@ using Rodrigues26
 
 @model t y function limit_cycle_model(θ::Vector{Float64})
     t::Vector{Float64} = collect(LinRange(0, 50, 101))
-    y::Vector{Float64} = θ[1] * sin(2π * t / θ[2])
+    y::Vector{Float64} = θ[1] * sin.(t / θ[2])
 end
 
 t_exp::Vector{Float64} = collect(LinRange(0, 100, 1001))
 y_exp::Vector{Float64} = sin.(t_exp) + 0.3 * randn(n)
 
 obj = ObjectiveFunction(limit_cycle_model, t_exp, y_exp)
-loss::Float64 = obj([1.0, 0.5])
+loss::Float64 = obj([1.0, 1.0])
 ```
 
 ## Citation

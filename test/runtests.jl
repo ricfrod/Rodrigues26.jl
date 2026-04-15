@@ -29,4 +29,8 @@ include("setup.jl")
         include("macros.jl")
     end
 
+    @testset "README.md" begin
+        include("readme.jl")
+    end
+
 end
