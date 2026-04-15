@@ -25,4 +25,8 @@ include("setup.jl")
         include("objective_function.jl")
     end
 
+    @testset "Macros" begin
+        include("macros.jl")
+    end
+
 end
