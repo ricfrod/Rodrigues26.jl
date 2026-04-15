@@ -1,9 +1,19 @@
 name = "Rodrigues26"
 uuid = "550c78b4-5300-4dde-9c6a-04c2fb101241"
-authors = ["Ricardo França Rodrigues <rica.frodrigues@gmail.com> and contributors"]
 version = "1.0.0-DEV"
+authors = ["Ricardo França Rodrigues <rica.frodrigues@gmail.com> and contributors"]
+
+[deps]
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+Interpolations = "a98d9a8b-a2ab-59e6-89dd-64a1c18fca59"
+Peaks = "18e31ff7-3703-566c-8e60-38913d67486b"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
+FFTW = "1.10.0"
+Interpolations = "0.16.2"
+Peaks = "0.6.2"
+Statistics = "1.11.1"
 julia = "1.10.10"
 
 [extras]
