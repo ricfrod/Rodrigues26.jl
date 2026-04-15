@@ -1,6 +1,7 @@
 # Rodrigues26.jl
 
 [![Build Status](https://github.com/ricfrod/Rodrigues26.jl/actions/workflows/CI.yml/badge.svg?branch=master)](https://github.com/ricfrod/Rodrigues26.jl/actions/workflows/CI.yml?query=branch%3Amaster)
+[![DOI:10.1007/s43153-025-00628-2](https://img.shields.io/badge/DOI-10.1007%2Fs43153--025--00628--2-blue)](https://doi.org/10.1007/s43153-025-00628-2)
 
 ## Overview
 
@@ -50,3 +51,11 @@ y_exp::Vector{Float64} = sin.(t_exp) + 0.3 * randn(n)
 obj = ObjectiveFunction(limit_cycle_model, t_exp, y_exp)
 loss::Float64 = obj([1.0, 0.5])
 ```
+
+## Citation
+
+If you use this software or the underlying methodology in your work, please cite the following paper:
+
+> Rodrigues, R.F., Trierweiler, J.O. & Farenzena, M. Parameter estimation and statistical analysis of limit cycle models using a local optimization algorithm: applications for simplified well models of slugging oil systems. *Braz. J. Chem. Eng.* (2026). https://doi.org/10.1007/s43153-025-00628-2
+
+You can also use the **"Cite this repository"** button on the right sidebar to export the citation in BibTeX or APA formats.

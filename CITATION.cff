@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Rodrigues"
+    given-names: "Ricardo F."
+  - family-names: "Trierweiler"
+    given-names: "Jorge O."
+  - family-names: "Farenzena"
+    given-names: "Marcelo"
+title: "Parameter estimation and statistical analysis of limit cycle models using a local optimization algorithm: applications for simplified well models of slugging oil systems"
+doi: "10.1007/s43153-025-00628-2"
+date-released: 2026-02-24
+url: "https://doi.org/10.1007/s43153-025-00628-2"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Rodrigues"
+      given-names: "R. F."
+    - family-names: "Trierweiler"
+      given-names: "J. O."
+    - family-names: "Farenzena"
+      given-names: "M."
+  doi: "10.1007/s43153-025-00628-2"
+  journal: "Brazilian Journal of Chemical Engineering"
+  title: "Parameter estimation and statistical analysis of limit cycle models using a local optimization algorithm: applications for simplified well models of slugging oil systems"
+  year: 2026
