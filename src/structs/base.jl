@@ -1,6 +1,8 @@
 using Statistics: var
 
+
 abstract type AbstractSignalData end
+
 
 struct VerboseSignalData <: AbstractSignalData
     t::Vector{Float64}
@@ -42,5 +44,4 @@ function SignalData(t::Vector{Float64}, y::Vector{Float64})
     else
         return SignalData(t, y, true)
     end
-
 end

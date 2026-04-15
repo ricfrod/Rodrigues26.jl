@@ -109,10 +109,17 @@ tolerance = 1.0e-3
 @test sum((exp.σ²_x - exp_calculated.σ²_x) .^ 2) < tolerance
 @test sum((exp.σ²_z - exp_calculated.σ²_z) .^ 2) < tolerance
 
-# I don't remember what these were for
-# I think the idea was to force a zero variance
-# @test_throws ArgumentError Rodrigues26.ExperimentalCycles(1, 1, zeros((2, 2)), zeros((2, 2)), zeros(2), [1, 1])
-# @test_throws ArgumentError Rodrigues26.ExperimentalCycles(1, 1, zeros((2, 2)), zeros((2, 2)), [1, 1], zeros(2))
+# force a zero variance
+@test_throws ArgumentError Rodrigues26.ExperimentalCycles(1, 1, zeros(2, 2), zeros(2, 2), zeros(2), [1.0, 1.0])
+@test_throws ArgumentError Rodrigues26.ExperimentalCycles(1, 1, zeros(2, 2), zeros(2, 2), [1.0, 1.0], zeros(2))
+
+# force a single cycle
+let
+    t = collect(LinRange(0, 10, 101))
+    y = sin.(t)
+    @test_throws AssertionError Rodrigues26.ExperimentalCycles(t, y)
+end
+
 
 # model cycles
 @test isa(mod_calculated, Rodrigues26.ModelCycles)

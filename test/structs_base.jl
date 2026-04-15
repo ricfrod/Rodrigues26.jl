@@ -11,3 +11,19 @@
 
 # signal vector must have significant variance (i.e., can't be steady state)
 @test_throws ArgumentError Rodrigues26.VerboseSignalData(Float64[1, 2], Float64[1, 1])
+
+# repeat the above tests now for SignalData
+let signal = Rodrigues26.SignalData([0.0], [0.0], false)
+    function test_signal_data(a::T, b::T)::Bool where {T <: SignalData}
+        return all(
+            getfield(a, f) == getfield(b, f)
+            for f in fieldnames(T)
+        )
+    end
+
+    @test isa(signal, Rodrigues26.SignalData)
+    @test test_signal_data(signal, Rodrigues26.SignalData(Float64[1], Float64[1]))
+    @test test_signal_data(signal, Rodrigues26.SignalData(Float64[1, 2, 3], Float64[1, 2]))
+    @test test_signal_data(signal, Rodrigues26.SignalData(Float64[1, 1], Float64[1, 2]))
+    @test test_signal_data(signal, Rodrigues26.SignalData(Float64[1, 2], Float64[1, 1]))
+end

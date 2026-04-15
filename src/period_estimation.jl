@@ -6,12 +6,6 @@ function period(data::AbstractSignalData)::Float64
     (; t, y) = data
 
     ts = t[2] - t[1]
-
-    tolerance = 1.0e-6
-    if any(i -> abs((t[i] - t[i-1]) - ts) > tolerance, 2:length(t))
-        throw(ArgumentError("Time vector must have constant sampling"))
-    end
-
     fs = 1.0 / ts
     n = length(y)
 
@@ -19,7 +13,8 @@ function period(data::AbstractSignalData)::Float64
 
     index = argmax(i -> abs(signal[i]), keys(signal))
 
-    f = abs(rfftfreq(n, fs)[index])
+    main_signal_frequency = abs(rfftfreq(n, fs)[index])
+    main_signal_period = 1.0 / main_signal_frequency
 
-    return 1.0 / f
+    return main_signal_period
 end

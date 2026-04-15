@@ -47,13 +47,15 @@ end
 
 function ExperimentalCycles(data::AbstractSignalData)
     (; t, y) = data
+
     indices::Vector{Int64} = extremum_indices(data)
-    nz::Int64 = indices |> diff |> mean |> floor |> Int64
     nc::Int64 = length(indices) - 1
 
     if nc <= 1
         throw(AssertionError("Unable to detect cycles in experimental data"))
     end
+
+    nz::Int64 = indices |> diff |> mean |> floor |> Int64
 
     X, Z = (
         zeros(nz, nc),
