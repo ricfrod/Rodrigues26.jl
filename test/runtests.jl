@@ -5,6 +5,14 @@ include("setup.jl")
 
 @testset "Rodrigues26.jl" begin
 
+    @testset "Aqua.jl" begin
+        include("Aqua.jl")
+    end
+
+    @testset "JET.jl" begin
+        include("JET.jl")
+    end
+
     @testset "Base structs" begin
         include("structs_base.jl")
     end
